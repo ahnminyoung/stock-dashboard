@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주식 대시보드 설계 문서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .doc-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .doc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        .doc-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+        .doc-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        .doc-desc {
+            color: #718096;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .doc-size {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #a0aec0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .status {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-left: 12px;
+            font-weight: 500;
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 주식/시황 대시보드 설계 문서</h1>
+        <p class="subtitle">
+            메인 홈 화면 기획부터 구현까지 - 바로 개발 가능한 상세 문서
+            <span class="status">✅ Ready</span>
+        </p>
+
+        <div class="docs-grid">
+            <a href="01-service-plan.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">01</div>
+                    <div class="doc-title">서비스 기획서</div>
+                    <div class="doc-desc">
+                        프로젝트 목표, 핵심 가치 제안, 타겟 사용자, 비즈니스 전략, 로드맵
+                    </div>
+                    <div class="doc-size">📄 18KB</div>
+                </div>
+            </a>
+
+            <a href="02-ia-structure.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">02</div>
+                    <div class="doc-title">IA 구조</div>
+                    <div class="doc-desc">
+                        사이트맵, 메뉴 구조, 포틀릿 우선순위, 사용자 플로우, 검색 IA
+                    </div>
+                    <div class="doc-size">📄 30KB</div>
+                </div>
+            </a>
+
+            <a href="03-wireframes.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">03</div>
+                    <div class="doc-title">와이어프레임 ⭐</div>
+                    <div class="doc-desc">
+                        데스크탑/모바일 화면 설계 (ASCII 아트), 반응형 디자인, 컴포넌트 사양
+                    </div>
+                    <div class="doc-size">📄 53KB</div>
+                </div>
+            </a>
+
+            <a href="04-component-architecture.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">04</div>
+                    <div class="doc-title">컴포넌트 아키텍처</div>
+                    <div class="doc-desc">
+                        React 컴포넌트 트리, Props/State 설계, Custom Hooks, 성능 최적화
+                    </div>
+                    <div class="doc-size">📄 25KB</div>
+                </div>
+            </a>
+
+            <a href="05-api-design.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">05</div>
+                    <div class="doc-title">API 설계서</div>
+                    <div class="doc-desc">
+                        RESTful API 엔드포인트, WebSocket 실시간 데이터, 요청/응답 JSON
+                    </div>
+                    <div class="doc-size">📄 17KB</div>
+                </div>
+            </a>
+
+            <a href="06-data-models.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">06</div>
+                    <div class="doc-title">데이터 모델</div>
+                    <div class="doc-desc">
+                        TypeScript 타입 정의, PostgreSQL 스키마, Redis 캐시, 더미 데이터
+                    </div>
+                    <div class="doc-size">📄 10KB</div>
+                </div>
+            </a>
+
+            <a href="07-development-plan.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">07</div>
+                    <div class="doc-title">개발 계획</div>
+                    <div class="doc-desc">
+                        MVP 우선순위, React 폴더 구조, 기술 스택, 배포 전략, Git 브랜치
+                    </div>
+                    <div class="doc-size">📄 14KB</div>
+                </div>
+            </a>
+
+            <a href="08-implementation-guide.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">08</div>
+                    <div class="doc-title">구현 가이드 ⭐</div>
+                    <div class="doc-desc">
+                        핵심 컴포넌트 5개, React 코드 예시, 더미 데이터, 성능 최적화
+                    </div>
+                    <div class="doc-size">📄 18KB</div>
+                </div>
+            </a>
+
+            <a href="09-ux-flow.md" target="_blank">
+                <div class="doc-card">
+                    <div class="doc-number">09</div>
+                    <div class="doc-title">UX 흐름</div>
+                    <div class="doc-desc">
+                        사용자 시나리오, 인터랙션 플로우, UI/UX 개선 포인트, 앱 확장 계획
+                    </div>
+                    <div class="doc-size">📄 14KB</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>🤖 Generated with <strong>Claude Code</strong></p>
+            <p style="margin-top: 8px;">2026-03-31 · v1.0 · Ready for Development</p>
+        </div>
+    </div>
+</body>
+</html>
