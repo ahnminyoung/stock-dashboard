@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node server/kis-proxy.mjs & vite",
     "dev:client": "vite",
     "dev:proxy": "node server/kis-proxy.mjs",
     "build": "tsc -b && vite build",

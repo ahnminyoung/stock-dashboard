@@ -130,6 +130,7 @@ export const useDashboardData = () => {
 
     return () => {
       mounted = false;
+      inFlightRef.current = false;
       window.clearInterval(timer);
       clearReconnectTimer();
       if (socketRef.current) {

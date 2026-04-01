@@ -19,6 +19,8 @@ export interface HeatmapItem {
   rank?: number;
 }
 
+export type HeatmapDataMap = Record<string, Record<string, HeatmapItem[]>>;
+
 export interface StockRowItem {
   id: string;
   name: string;
@@ -45,9 +47,11 @@ export interface MarketSectionData {
   heatmapFilters: string[];
   heatmapPeriods: string[];
   heatmapItems: HeatmapItem[];
+  heatmapData?: HeatmapDataMap;
   moversTitle: string;
   moverTabs: string[];
   movers: StockRowItem[];
+  moversByTab?: Record<string, StockRowItem[]>;
   watchlistTitle: string;
   watchlist: StockRowItem[];
   newsTitle: string;

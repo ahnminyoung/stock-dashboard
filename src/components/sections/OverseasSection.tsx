@@ -32,7 +32,13 @@ export const OverseasSection = ({ data }: OverseasSectionProps) => {
 
       <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
         <div className="xl:col-span-2">
-          <Heatmap title={data.heatmapTitle} filters={data.heatmapFilters} periods={data.heatmapPeriods} items={data.heatmapItems} />
+          <Heatmap
+            title={data.heatmapTitle}
+            filters={data.heatmapFilters}
+            periods={data.heatmapPeriods}
+            items={data.heatmapItems}
+            data={data.heatmapData}
+          />
         </div>
 
         <aside className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -60,7 +66,7 @@ export const OverseasSection = ({ data }: OverseasSectionProps) => {
           </div>
 
           <div className="mt-4">
-            <StockList items={data.movers} />
+            <StockList items={data.moversByTab?.[activeTab] ?? data.movers} />
           </div>
         </aside>
       </div>
